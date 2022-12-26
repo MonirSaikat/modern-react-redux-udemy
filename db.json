@@ -1,9 +1,160 @@
- {
+{
   "users": [
     {
-      "id": 1, "name": "Myra"
-    }, {
-      "id": 2, "name": "Saikat"
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "id": 2,
+      "name": "Saikat"
+    },
+    {
+      "name": "Elisa Rutherford",
+      "id": 3
+    },
+    {
+      "name": "Lori Kuhn PhD",
+      "id": 4
+    },
+    {
+      "name": "Bernard Kemmer PhD",
+      "id": 5
+    },
+    {
+      "name": "Jeanette Wisozk",
+      "id": 6
+    },
+    {
+      "name": "Lela Hintz",
+      "id": 7
+    },
+    {
+      "name": "Ernestine Hoppe",
+      "id": 8
+    },
+    {
+      "name": "Toni Aufderhar Sr.",
+      "id": 9
+    },
+    {
+      "name": "Ms. Alfred Dooley I",
+      "id": 10
+    },
+    {
+      "name": "Hugo Carroll",
+      "id": 11
+    },
+    {
+      "name": "Peggy Davis",
+      "id": 12
+    },
+    {
+      "name": "Pablo Huel",
+      "id": 13
+    },
+    {
+      "name": "Cedric Kutch",
+      "id": 14
+    },
+    {
+      "name": "Melinda Johnson",
+      "id": 15
+    },
+    {
+      "name": "Armando Doyle",
+      "id": 16
+    },
+    {
+      "name": "Lucia Padberg",
+      "id": 17
+    },
+    {
+      "name": "Charles Crist",
+      "id": 18
+    },
+    {
+      "name": "Dr. Duane Rolfson",
+      "id": 19
+    },
+    {
+      "name": "Derrick Runolfsdottir",
+      "id": 20
+    },
+    {
+      "name": "Sherri Huels Jr.",
+      "id": 21
+    },
+    {
+      "name": "Desiree Sawayn",
+      "id": 22
+    },
+    {
+      "name": "Orville Rolfson",
+      "id": 23
+    },
+    {
+      "name": "Mrs. Cary Jakubowski",
+      "id": 24
+    },
+    {
+      "name": "Kate Bergnaum I",
+      "id": 25
+    },
+    {
+      "name": "Nick Cronin III",
+      "id": 26
+    },
+    {
+      "name": "Jimmy Bahringer",
+      "id": 27
+    },
+    {
+      "name": "Nichole Mayer",
+      "id": 28
+    },
+    {
+      "name": "Mr. Ben Beer",
+      "id": 29
+    },
+    {
+      "name": "Betsy Runolfsdottir",
+      "id": 30
+    },
+    {
+      "name": "Dianne Abshire",
+      "id": 31
+    },
+    {
+      "name": "Kathy Kerluke",
+      "id": 32
+    },
+    {
+      "name": "Julia Marvin",
+      "id": 33
+    },
+    {
+      "name": "Stuart Bogisich",
+      "id": 34
+    },
+    {
+      "name": "Lisa Franey",
+      "id": 35
+    },
+    {
+      "name": "Carolyn Kunde",
+      "id": 36
+    },
+    {
+      "name": "Chester Hermiston",
+      "id": 37
+    },
+    {
+      "name": "Jimmy Gutkowski",
+      "id": 38
+    },
+    {
+      "name": "Lamar O'Connell",
+      "id": 39
     }
   ],
   "albums": [],
