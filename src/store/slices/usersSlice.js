@@ -1,5 +1,6 @@
 import { fetchUsers } from '../thunks/fetchUsers';
 import { addUser } from '../thunks/addUser';
+import { removeUser } from '../thunks/removeUser';
 const { createSlice } = require('@reduxjs/toolkit');
 
 const usersSlice = createSlice({
@@ -21,6 +22,13 @@ const usersSlice = createSlice({
      */
     builder.addCase(addUser.fulfilled, (state, action) => {
       state.data.push(action.payload);
+    });
+
+    /**
+     * Remove user cases
+     */
+    builder.addCase(removeUser.fulfilled, (state, action) => {
+      state.data = state.data.filter(user => user.id !== action.payload);
     });
   }
 });
