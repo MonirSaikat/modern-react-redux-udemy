@@ -36,8 +36,12 @@ const UsersList = () => {
     <>
       <div className='flex flex-row justify-between m-3'>
         <h2 className="m-2 text-xl">Users</h2>
-        <Button primary onClick={handleUserAdd}>
-          {isAddingUser ? 'adding': 'not adding'} Add User
+        <Button
+          primary
+          loading={isAddingUser}
+          onClick={handleUserAdd}
+        >
+          Add User
         </Button>
       </div>
       { content }
