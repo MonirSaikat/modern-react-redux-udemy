@@ -18,17 +18,19 @@ const UsersList = () => {
 
   const handleUserAdd = () => doAddUser();
 
-  const skeleton = <Skeleton times={4} className='h-10 w-full' />
-  if (usersLoadingError) return <div>{usersLoadingError.message}...</div>;
-
-  const renderedUsers = data.map(user => {
-    return(
-      <UsersListItem
-        key={user.id}
-        user={user}
-      />
-    );
-  });
+  let content;
+  if (isUsersLoading) content = <Skeleton times={4} className='h-10 w-full' />;
+  else if (usersLoadingError) content = <div>{usersLoadingError.message}...</div>;
+  else {
+    content = data.map(user => {
+      return (
+        <UsersListItem
+          key={user.id}
+          user={user}
+        />
+      );
+    });
+  }
 
   return (
     <>
@@ -38,7 +40,7 @@ const UsersList = () => {
           {isAddingUser ? 'adding': 'not adding'} Add User
         </Button>
       </div>
-      { isUsersLoading ? skeleton :  renderedUsers }
+      { content }
     </>
   );
 }
