@@ -3,17 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser, fetchUsers, removeUser } from '../store';
 import Skeleton from './Skeleton';
 import Button from './Button';
-
-const User = ({ user, handleRemove }) => {
-  return(
-    <div className='mb-2 border rounded'>
-      <div className='flex p-2 justify-between items-center'>
-        <span>{user.name}</span>
-        <Button onClick={() => handleRemove(user.id)} danger>delete</Button>
-      </div>
-    </div>
-  );
-};
+import UsersListItem from './UsersListItem';
 
 const UsersList = () => {
   const [isUsersLoading, setIsUsersLoading] = useState(false);
@@ -39,19 +29,14 @@ const UsersList = () => {
       .finally(() => setIsAddingUser(false));
   };
 
-  const handleUserRemove = (id) => {
-    dispatch(removeUser(id));
-  };
-
   const skeleton = <Skeleton times={4} className='h-10 w-full' />
   if (usersLoadingError) return <div>{usersLoadingError.message}...</div>;
 
   const renderedUsers = data.map(user => {
     return(
-      <User
+      <UsersListItem
         key={user.id}
         user={user}
-        handleRemove={handleUserRemove}
       />
     );
   });
