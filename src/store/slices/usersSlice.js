@@ -28,7 +28,7 @@ const usersSlice = createSlice({
      * Remove user cases
      */
     builder.addCase(removeUser.fulfilled, (state, action) => {
-      state.data = state.data.filter(user => user.id !== action.payload);
+      state.data = state.data.filter(user => user.id !== action.payload.id);
     });
   }
 });
