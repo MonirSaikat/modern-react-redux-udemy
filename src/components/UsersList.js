@@ -1,33 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser, fetchUsers, removeUser } from '../store';
+import { addUser, fetchUsers } from '../store';
 import Skeleton from './Skeleton';
 import Button from './Button';
 import UsersListItem from './UsersListItem';
+import { useThunk } from '../hooks/user-thunk';
 
 const UsersList = () => {
-  const [isUsersLoading, setIsUsersLoading] = useState(false);
-  const [usersLoadingError, setUsersLoadingError] = useState(null);
-  const [isAddingUser, setIsAddingUser] = useState(false);
-  const [addingUserError, setAddingUserError] = useState(null);
+  const [doFetchUsers, isUsersLoading, usersLoadingError] = useThunk(fetchUsers);
+  const [doAddUser, isAddingUser, addingUserError] = useThunk(addUser);
   const { data } = useSelector(state => state.users);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setIsUsersLoading(true);
-    dispatch(fetchUsers())
-      .unwrap()
-      .catch((err) => setUsersLoadingError(err))
-      .finally(() => setIsUsersLoading(false));
+    doFetchUsers();
   }, []);
 
-  const handlUserAdd = () => {
-    setIsAddingUser(true);
-    dispatch(addUser())
-      .unwrap()
-      .catch(err => setAddingUserError(err))
-      .finally(() => setIsAddingUser(false));
-  };
+  const handleUserAdd = () => doAddUser();
 
   const skeleton = <Skeleton times={4} className='h-10 w-full' />
   if (usersLoadingError) return <div>{usersLoadingError.message}...</div>;
@@ -45,7 +34,7 @@ const UsersList = () => {
     <>
       <div className='flex flex-row justify-between m-3'>
         <h2 className="m-2 text-xl">Users</h2>
-        <Button primary onClick={handlUserAdd}>
+        <Button primary onClick={handleUserAdd}>
           {isAddingUser ? 'adding': 'not adding'} Add User
         </Button>
       </div>
